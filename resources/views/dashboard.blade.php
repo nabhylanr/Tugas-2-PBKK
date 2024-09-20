@@ -27,6 +27,8 @@
   </a>
 </div>
 
+<img src="{{ asset('img/2.jpg') }}" style="width: 100%; max-width: 1200px; margin: 20px 0;">
+
 <div class="container mb-5" style="color: #000000;">
     <h2 class="text-center my-5">Top Category Drink Picks</h2>
     <div class="row justify-content-center">
