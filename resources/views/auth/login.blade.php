@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -20,7 +19,7 @@
 
 </head>
 
-<body class="bg-gradient-primary">
+<body class="bg-gradient-primary" style="background-color: #FFFFFF;">
 
   <div class="container">
 
@@ -33,23 +32,25 @@
           <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
             <div class="row">
-              <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+              <div class="col-lg-6 d-none d-lg-block">
+                <img src="{{ asset('img/logo.png') }}" alt="Logo" style="width: 100%; height: auto;">
+              </div>
               <div class="col-lg-6">
                 <div class="p-5">
                   <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-4">Welcome to Your IKEA Shopping Journey! 🛍️🛒</h1>
+                    <h1 class="h4 text-gray-900 mb-4" style="color: #ffffff;">Sign in or create an account</h1>
                   </div>
                   <form action="{{ route('login.aksi') }}" method="POST" class="user">
                     @csrf
-										@if ($errors->any())
-										<div class="alert alert-danger">
-											<ul>
-												@foreach ($errors->all() as $error)
-												<li>{{ $error }}</li>
-												@endforeach
-											</ul>
-										</div>
-										@endif
+                    @if ($errors->any())
+                      <div class="alert alert-danger">
+                        <ul>
+                          @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                          @endforeach
+                        </ul>
+                      </div>
+                    @endif
                     <div class="form-group">
                       <input name="email" type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
                     </div>
@@ -59,15 +60,14 @@
                     <div class="form-group">
                       <div class="custom-control custom-checkbox small">
                         <input name="remember" type="checkbox" class="custom-control-input" id="customCheck">
-                        <label class="custom-control-label" for="customCheck">Remember
-                          Me</label>
+                        <label class="custom-control-label" for="customCheck">Remember Me</label>
                       </div>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-block btn-user">Login! 🚪 </button>
+                    <button type="submit" class="btn btn-primary btn-block btn-user" style="background-color: #1F3933; border-color: #1F3933;">Login</button>
                   </form>
                   <hr>
                   <div class="text-center">
-                    <a class="small" href="{{ route('register') }}">Create an Account!</a>
+                    <a class="small" href="{{ route('register') }}" style="color: #1F3933;">Create an account</a>
                   </div>
                 </div>
               </div>

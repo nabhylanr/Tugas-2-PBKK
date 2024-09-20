@@ -1,9 +1,10 @@
-<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+<nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow" style="background-color: #FFFFFF;">
 
     <!-- Sidebar Toggle (Topbar) -->
     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-      <i class="fa fa-bars"></i>
+      <i class="fa fa-bars" style="color: #FFFFFF;"></i>
     </button>
+  
   
     <!-- Topbar Search -->
     {{-- <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
@@ -16,8 +17,6 @@
         </div>
       </div>
     </form> --}}
-
-    
   
     <!-- Topbar Navbar -->
     <ul class="navbar-nav ml-auto">
@@ -161,7 +160,7 @@
                       <br>
                       <small>{{ auth()->user()->level }}</small>
                   </span>
-          <img class="img-profile rounded-circle" src="img/furstin.png">
+          <img class="img-profile rounded-circle" src="img/profile.PNG">
         </a>
         <!-- Dropdown - User Information -->
         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">

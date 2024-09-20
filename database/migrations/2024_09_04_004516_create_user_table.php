@@ -19,6 +19,8 @@ return new class extends Migration
 			$table->string('email');
 			$table->string('password');
 			$table->string('level');
+			$table->string('mobile')->nullable();
+            $table->string('address')->nullable();
 			$table->timestamps();
 		});
 	}

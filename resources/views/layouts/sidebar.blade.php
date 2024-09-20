@@ -1,11 +1,11 @@
-<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+<ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: #1F3933; color: #000000;">
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
       <div class="sidebar-brand-icon rotate-n-15">
-        <img src="{{ asset('img/logo.png') }}" alt="Brand Image" class="img-fluid rounded-circle" style="width: 50px; height: 50px;">
+        <img src="{{ asset('img/logo.svg.png') }}" alt="Brand Image" class="img-fluid rounded-circle" style="width: 50px; height: 50px;">
       </div>
-      <div class="sidebar-brand-text mx-3">IKEA</div>
+      <div class="sidebar-brand-text mx-3">Starbucks</div>
     </a>
   
     <!-- Divider -->
@@ -19,9 +19,9 @@
     </li>
   
     <li class="nav-item">
-      <a class="nav-link" href="{{ route('barang') }}">
+      <a class="nav-link" href="{{ route('menu') }}">
         <i class="fas fa-fw fa-couch"></i>
-        <span>Products</span></a>
+        <span>Menus</span></a>
     </li>
   
       @if (auth()->user()->level == 'Admin')
@@ -31,6 +31,12 @@
         <span>Categories </span></a>
     </li>
       @endif
+
+    <li class="nav-item">
+      <a class="nav-link" href="{{ route('profile') }}">
+        <i class="fas fa-fw fa-tags"></i>
+        <span>Profile </span></a>
+    </li>
   
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
@@ -39,7 +45,4 @@
     <div class="text-center d-none d-md-inline">
       <button class="rounded-circle border-0" id="sidebarToggle"></button>
     </div>
-  
-    
-  
   </ul>

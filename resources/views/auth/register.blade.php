@@ -20,7 +20,7 @@
 
 </head>
 
-<body class="bg-gradient-primary">
+<body class="bg-gradient-primary" style="background-color: #FFFFFF;">
 
   <div class="container">
 
@@ -28,45 +28,47 @@
       <div class="card-body p-0">
         <!-- Nested Row within Card Body -->
         <div class="row">
-          <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
+          <div class="col-lg-5 d-none d-lg-block">
+            <img src="{{ asset('img/logo.png') }}" alt="Logo" style="width: 100%; height: auto;">
+          </div>
           <div class="col-lg-7">
             <div class="p-5">
               <div class="text-center">
-                <h1 class="h4 text-gray-900 mb-4">Let's Get You Registered! 🌟</h1>
+                <h1 class="h4 text-gray-900 mb-4" style="color: #ffffff;">Register</h1>
               </div>
               <form action="{{ route('register.simpan') }}" method="POST" class="user">
                 @csrf
                 <div class="form-group">
-                  <input name="nama" type="text" class="form-control form-control-user @error('nama')is-invalid @enderror" id="exampleInputName" placeholder="Name">
+                  <input name="nama" type="text" class="form-control form-control-user @error('nama') is-invalid @enderror" id="exampleInputName" placeholder="Name">
                   @error('nama')
                     <span class="invalid-feedback">{{ $message }}</span>
                   @enderror
                 </div>
                 <div class="form-group">
-                  <input name="email" type="email" class="form-control form-control-user @error('email')is-invalid @enderror" id="exampleInputEmail" placeholder="Email Address">
+                  <input name="email" type="email" class="form-control form-control-user @error('email') is-invalid @enderror" id="exampleInputEmail" placeholder="Email Address">
                   @error('email')
                     <span class="invalid-feedback">{{ $message }}</span>
                   @enderror
                 </div>
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input name="password" type="password" class="form-control form-control-user @error('password')is-invalid @enderror" id="exampleInputPassword" placeholder="Password">
+                    <input name="password" type="password" class="form-control form-control-user @error('password') is-invalid @enderror" id="exampleInputPassword" placeholder="Password">
                     @error('password')
                       <span class="invalid-feedback">{{ $message }}</span>
                     @enderror
                   </div>
                   <div class="col-sm-6">
-                    <input name="password_confirmation" type="password" class="form-control form-control-user @error('password_confirmation')is-invalid @enderror" id="exampleRepeatPassword" placeholder="Repeat Password">
+                    <input name="password_confirmation" type="password" class="form-control form-control-user @error('password_confirmation') is-invalid @enderror" id="exampleRepeatPassword" placeholder="Repeat Password">
                     @error('password_confirmation')
                       <span class="invalid-feedback">{{ $message }}</span>
                     @enderror
                   </div>
                 </div>
-                <button type="submit" class="btn btn-primary btn-user btn-block">Create Your Account 💡</button>
+                <button type="submit" class="btn btn-primary btn-user btn-block" style="background-color: #1F3933; border-color: #1F3933;">Create your account</button>
               </form>
               <hr>
               <div class="text-center">
-                <a class="small" href="{{ route('login') }}">Already have an account? Login!</a>
+                <a class="small" href="{{ route('login') }}" style="color: #1F3933;">Already have an account? Login</a>
               </div>
             </div>
           </div>

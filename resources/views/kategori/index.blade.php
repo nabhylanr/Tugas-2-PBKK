@@ -5,19 +5,19 @@
 @section('contents')
   <div class="card shadow mb-4">
     <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary">Data Kategori</h6>
+      <h6 class="m-0 font-weight-bold" style="color: #1F3933;">Data Kategori</h6>
     </div>
     <div class="card-body">
       <div class="row mb-3">
 
-      <a href="{{ route('kategori.tambah') }}" class="btn btn-primary mb-3">Tambah Kategori</a>
+      <a href="{{ route('kategori.tambah') }}" class="btn btn-primary mb-3" style="background-color: #1F3933; color: #FFFFFF;">Tambah Kategori</a>
 
       <!-- Topbar Search -->
       <form action="{{ route('kategori.search') }}" method="GET" class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
         <div class="input-group">
           <input type="text" name="search" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" value="{{ request('search') }}">
           <div class="input-group-append">
-            <button class="btn btn-primary" type="submit">
+            <button class="btn btn-primary" type="submit" style="background-color: #1F3933; color: #FFFFFF;">
               <i class="fas fa-search fa-sm"></i>
             </button>
           </div>

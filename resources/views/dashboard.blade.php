@@ -1,165 +1,85 @@
 @extends('layouts.app')
 
-@section('title', 'IKEA Dashboard 🛒')
-
 @section('contents')
-  {{-- <div class="row">
 
-    <!-- Earnings (Monthly) Card Example -->
-    <div class="col-xl-3 col-md-6 mb-4">
-      <div class="card border-left-primary shadow h-100 py-2">
-        <div class="card-body">
-          <div class="row no-gutters align-items-center">
-            <div class="col mr-2">
-              <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                Monthly Revenue Boost 💵</div>
-              <div class="h5 mb-0 font-weight-bold text-gray-800">1,678,999</div>
-            </div>
-            <div class="col-auto">
-              <i class="fas fa-calendar fa-2x text-gray-300"></i>
-            </div>
-          </div>
-        </div>
-      </div>
+<div id="carouselExampleCaptions" class="carousel slide mb-5">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{{ asset('img/banner1.jpg') }}" class="d-block w-100" alt="First slide">
     </div>
+    <div class="carousel-item">
+      <img src="{{ asset('img/banner2.jpg') }}" class="d-block w-100" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img src="{{ asset('img/banner3.jpg') }}" class="d-block w-100" alt="Third slide">
+    </div>
+    <div class="carousel-item">
+      <img src="{{ asset('img/banner3.jpg') }}" class="d-block w-100" alt="Third slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
 
-    <!-- Earnings (Monthly) Card Example -->
-    <div class="col-xl-3 col-md-6 mb-4">
-      <div class="card border-left-success shadow h-100 py-2">
-        <div class="card-body">
-          <div class="row no-gutters align-items-center">
-            <div class="col mr-2">
-              <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                early Growth Snapshot 📈</div>
-              <div class="h5 mb-0 font-weight-bold text-gray-800">20,415,000</div>
-            </div>
-            <div class="col-auto">
-              <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Earnings (Monthly) Card Example -->
-    <div class="col-xl-3 col-md-6 mb-4">
-      <div class="card border-left-info shadow h-100 py-2">
-        <div class="card-body">
-          <div class="row no-gutters align-items-center">
-            <div class="col mr-2">
-              <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Progress Tracker 🔥
-              </div>
-              <div class="row no-gutters align-items-center">
-                <div class="col-auto">
-                  <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
-                </div>
-                <div class="col">
-                  <div class="progress progress-sm mr-2">
-                    <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-auto">
-              <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Pending Requests Card Example -->
-    <div class="col-xl-3 col-md-6 mb-4">
-      <div class="card border-left-warning shadow h-100 py-2">
-        <div class="card-body">
-          <div class="row no-gutters align-items-center">
-            <div class="col mr-2">
-              <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                Requests in Queue ⏳</div>
-              <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
-            </div>
-            <div class="col-auto">
-              <i class="fas fa-comments fa-2x text-gray-300"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> --}}
-  <div class="container mb-5">
-    <h2 class="text-center my-5">Top Category Picks</h2>
+<div class="container mb-5" style="color: #000000;">
+    <h2 class="text-center my-5">Top Category Drink Picks</h2>
     <div class="row justify-content-center">
-        <!-- Category Item 1 -->
-        <div class="col-lg-2 col-md-4 col-sm-6 category-item">
-            <div class="category-card">
-                <img src="{{ asset('img/cushions1.png') }}" class="img-fluid category-img" alt="Cushions">
-                <p class="text-center">Cushions</p>
+        <div class="col-lg-2 col-md-4 col-sm-6 category-item" style="margin: 20px;">
+            <div class="product-card">
+                <img src="{{ asset('img/drinks2.jpg') }}" class="img-fluid category-img rounded-circle" alt="Cold Coffees">
+                <p class="text-center">Cold Coffees</p>
             </div>
         </div>
-        <!-- Category Item 2 -->
-        <div class="col-lg-2 col-md-4 col-sm-6 category-item">
-            <div class="category-card">
-                <img src="{{ asset('img/sofa.png') }}" class="img-fluid category-img" alt="Sofas">
-                <p class="text-center">Sofas</p>
+        <div class="col-lg-2 col-md-4 col-sm-6 category-item" style="margin: 20px;">
+            <div class="product-card">
+                <img src="{{ asset('img/drinks3.jpg') }}" class="img-fluid category-img rounded-circle" alt="Hot Teas">
+                <p class="text-center">Hot Teas</p>
             </div>
         </div>
-        <!-- Category Item 3 -->
-        <div class="col-lg-2 col-md-4 col-sm-6 category-item">
-            <div class="category-card">
-                <img src="{{ asset('img/desk.png') }}" class="img-fluid category-img" alt="Home desks">
-                <p class="text-center">Home desks</p>
+        <div class="col-lg-2 col-md-4 col-sm-6 category-item" style="margin: 20px;">
+            <div class="product-card">
+                <img src="{{ asset('img/drinks4.jpg') }}" class="img-fluid category-img rounded-circle" alt="Frappuccino Blended">
+                <p class="text-center">Frappuccino</p>
             </div>
         </div>
-        <!-- Category Item 4 -->
-        <div class="col-lg-2 col-md-4 col-sm-6 category-item">
-            <div class="category-card">
-                <img src="{{ asset('img/rak.png') }}" class="img-fluid category-img" alt="Chest of drawers">
-                <p class="text-center">Chest of drawers</p>
-            </div>
-        </div>
-        <!-- Category Item 5 -->
-        <div class="col-lg-2 col-md-4 col-sm-6 category-item">
-            <div class="category-card">
-                <img src="{{ asset('img/chair.png') }}" class="img-fluid category-img" alt="Non-upholstered chairs">
-                <p class="text-center">Chair</p>
-            </div>
-        </div>
-        <!-- Category Item 6 -->
-        <div class="col-lg-2 col-md-4 col-sm-6 category-item">
-            <div class="category-card">
-                <img src="{{ asset('img/mat.png') }}" class="img-fluid category-img" alt="Mattresses">
-                <p class="text-center">Mattresses</p>
+        <div class="col-lg-2 col-md-4 col-sm-6 category-item" style="margin: 20px;">
+            <div class="product-card">
+                <img src="{{ asset('img/drinks5.jpg') }}" class="img-fluid category-img rounded-circle" alt="Hot Coffees">
+                <p class="text-center">Hot Coffees</p>
             </div>
         </div>
     </div>
-    <h2 class="text-center my-5">Popular Products</h2>
+
+    <h2 class="text-center my-5">Another Category Picks</h2>
     <div class="row justify-content-center popular-products">
-        <!-- Product Item 1 -->
         <div class="col-lg-3 col-md-4 col-sm-6 product-item">
-            <div class="product-card">
-                <img src="{{ asset('img/key.png') }}" class="img-fluid product-img" alt="Product 1">
-                <p class="text-center">KNÖLIG <br> 149.000</p>
+            <div class="category-card">
+                <img src="{{ asset('img/another1.jpg') }}" class="img-fluid product-img" alt="Product 1">
+                <p class="text-center">Hot Breakfast</p>
             </div>
         </div>
-        <!-- Product Item 2 -->
         <div class="col-lg-3 col-md-4 col-sm-6 product-item">
-            <div class="product-card">
-                <img src="{{ asset('img/lamp.png') }}" class="img-fluid product-img" alt="Product 2">
-                <p class="text-center">ÅRSTD <br> 75.000</p>
+            <div class="category-card">
+                <img src="{{ asset('img/another2.jpg') }}" class="img-fluid product-img" alt="Product 2">
+                <p class="text-center">Bakery</p>
             </div>
         </div>
-        <!-- Product Item 3 -->
         <div class="col-lg-3 col-md-4 col-sm-6 product-item">
-            <div class="product-card">
-                <img src="{{ asset('img/pot.png') }}" class="img-fluid product-img" alt="Product 3">
-                <p class="text-center">FEJKA <br> 120.000</p>
+            <div class="category-card">
+                <img src="{{ asset('img/another3.jpg') }}" class="img-fluid product-img" alt="Product 3">
+                <p class="text-center">Tumblers</p>
             </div>
         </div>
-        <!-- Product Item 4 -->
         <div class="col-lg-3 col-md-4 col-sm-6 product-item">
-            <div class="product-card">
-                <img src="{{ asset('img/jam.png') }}" class="img-fluid product-img" alt="Product 4">
-                <p class="text-center">SKÄRIG <br> 199.000</p>
+            <div class="category-card">
+                <img src="{{ asset('img/another4.jpg') }}" class="img-fluid product-img" alt="Product 4">
+                <p class="text-center">Whole Bean</p>
             </div>
         </div>
     </div>
@@ -167,46 +87,43 @@
 
     <h2 class="text-center my-5">User Feedback and Reviews</h2>
     <div class="row justify-content-center">
-        <!-- First Review -->
         <div class="col-lg-8 mb-4 review-item d-flex align-items-center card-container">
             <div class="user-img">
-                <img src="{{ asset('img/icon.png') }}" class="img-fluid rounded-circle hover-zoom" alt="User 1">
+                <img src="{{ asset('img/profile.PNG') }}" class="img-fluid rounded-circle hover-zoom" alt="User 1">
             </div>
             <div class="user-review ml-3">
-                <h5 class="mb-1">Gayu Baruwa</h5>
+                <h5 class="mb-1">Ardhika Krishna</h5>
                 <div class="stars mb-1">
                     @for($i = 1; $i <= 4; $i++)
                         <span class="fa fa-star checked"></span>
                     @endfor
-                    <span class="fa fa-star"></span> <!-- 4 stars rating -->
+                    <span class="fa fa-star"></span> 
                 </div>
-                <p class="text-muted">"Very comfortable, great quality!"</p>
+                <p class="text-muted">"Smooth and creamy taste, perfect for enjoying in the morning!"</p>
             </div>
         </div>
 
-        <!-- Second Review -->
         <div class="col-lg-8 mb-4 review-item d-flex align-items-center card-container">
             <div class="user-img">
                 <img src="{{ asset('img/icon.png') }}" class="img-fluid rounded-circle hover-zoom" alt="User 2">
             </div>
             <div class="user-review ml-3">
-                <h5 class="mb-1">Alya Salsabilla</h5>
+                <h5 class="mb-1">Blacky</h5>
                 <div class="stars mb-1">
                     @for($i = 1; $i <= 5; $i++)
                         <span class="fa fa-star checked"></span>
                     @endfor
                 </div>
-                <p class="text-muted">"Amazing design and perfect size!"</p>
+                <p class="text-muted">"A unique scent coffee!"</p>
             </div>
         </div>
 
-        <!-- Third Review -->
         <div class="col-lg-8 mb-4 review-item d-flex align-items-center card-container">
             <div class="user-img">
                 <img src="{{ asset('img/icon.png') }}" class="img-fluid rounded-circle hover-zoom" alt="User 3">
             </div>
             <div class="user-review ml-3">
-                <h5 class="mb-1">Nabhyla Niagara</h5>
+                <h5 class="mb-1">Furstin Aprilavia</h5>
                 <div class="stars mb-1">
                     @for($i = 1; $i <= 3; $i++)
                         <span class="fa fa-star checked"></span>
@@ -215,11 +132,10 @@
                         <span class="fa fa-star"></span>
                     @endfor
                 </div>
-                <p class="text-muted">"Good, but could be softer."</p>
+                <p class="text-muted">"Good, but coffee too strong."</p>
             </div>
         </div>
 
-        <!-- Fourth Review -->
         <div class="col-lg-8 mb-4 review-item d-flex align-items-center card-container">
             <div class="user-img">
                 <img src="{{ asset('img/icon.png') }}" class="img-fluid rounded-circle hover-zoom" alt="User 4">
@@ -231,28 +147,16 @@
                         <span class="fa fa-star checked"></span>
                     @endfor
                 </div>
-                <p class="text-muted">"Perfect for my living room!"</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- New Section: Company Owner -->
-    <h2 class="text-center my-5">Company Owner</h2>
-    <div class="row justify-content-center">
-        <div class="col-lg-4 col-md-6 text-center">
-            <!-- Photo Section -->
-            <img src="{{ asset('img/furstin.png') }}" class="img-fluid owner-img" alt="Owner Photo">
-        </div>
-        <div class="col-lg-6 col-md-6 card-container">
-            <!-- Paragraph Section -->
-            <div class="owner-description">
-                <h4>Furstin Aprilavia Putri</h4>
-                <p>Hello, I am Furstin Aprilavia Putri from PBKK B class with student ID 5025221234. This is my project, an IKEA e-commerce website! I am using Bootstrap and MySQL as the database. All products and categories here are directly sourced from the IKEA website. Thank you! 😊</p>
+                <p class="text-muted">"The aroma is fragrant, and the flavor profile is rich. Perfect!"</p>
             </div>
         </div>
     </div>
 </div>
 
+<h2 class="text-center my-5" style="color: #000000;">Country Map Starbucks</h2>
+<div style="display: flex; justify-content: center; align-items: center;">
+    <img src="{{ asset('img/map.jpg') }}" class="img-fluid product-img" alt="Product 4" style="width: 900px; height: auto;">
+</div>
 
   <!-- Content Row -->
 {{-- 
@@ -287,7 +191,7 @@
         <!-- Card Body -->
         <div class="card-body">
           <div class="mt-4 text-center">
-            <img src="{{ asset('img/furstin.png') }}" class="img-fluid" alt="Login Image">
+            <img src="{{ asset('img/profile.png') }}" class="img-fluid" alt="Login Image">
           </div>
           
         </div>

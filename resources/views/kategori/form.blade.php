@@ -9,7 +9,7 @@
       <div class="col-12">
         <div class="card shadow mb-4">
           <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">{{ isset($kategori) ? 'Form Edit Kategori' : 'Form Tambah Kategori' }}</h6>
+            <h6 class="m-0 font-weight-bold" style="color: #1F3933;">{{ isset($kategori) ? 'Form Edit Kategori' : 'Form Tambah Kategori' }}</h6>
           </div>
           <div class="card-body">
             <div class="form-group">
@@ -18,7 +18,7 @@
             </div>
           </div>
           <div class="card-footer">
-            <button type="submit" class="btn btn-primary">Simpan</button>
+            <button type="submit" class="btn btn-primary" style="background-color: #1F3933; color: #FFFFFF;">Simpan</button>
           </div>
         </div>
       </div>

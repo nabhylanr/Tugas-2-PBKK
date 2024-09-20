@@ -1,20 +1,9 @@
 <?php
 
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\BarangController;
+use App\Http\Controllers\MenuController;
 use App\Http\Controllers\KategoriController;
 use Illuminate\Support\Facades\Route;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::controller(AuthController::class)->group(function () {
 	Route::get('register', 'register')->name('register');
@@ -35,17 +24,16 @@ Route::middleware('auth')->group(function () {
 		return view('dashboard');
 	})->name('dashboard');
 
-	Route::controller(BarangController::class)->prefix('barang')->group(function () {
-		Route::get('', 'index')->name('barang');
-		// Route::get('cari', 'search')->name('barang.search');
-		Route::get('tambah', 'tambah')->name('barang.tambah');
-		Route::post('tambah', 'simpan')->name('barang.tambah.simpan');
-		Route::get('edit/{id}', 'edit')->name('barang.edit');
-		Route::post('edit/{id}', 'update')->name('barang.tambah.update');
-		Route::get('hapus/{id}', 'hapus')->name('barang.hapus');
+	Route::controller(MenuController::class)->prefix('menu')->group(function () {
+		Route::get('', 'index')->name('menu');
+		Route::get('tambah', 'tambah')->name('menu.tambah');
+		Route::post('tambah', 'simpan')->name('menu.tambah.simpan');
+		Route::get('edit/{id}', 'edit')->name('menu.edit');
+		Route::post('edit/{id}', 'update')->name('menu.tambah.update');
+		Route::get('hapus/{id}', 'hapus')->name('menu.hapus');
 	});
 	
-	Route::get('/barang/cari', [BarangController::class, 'search'])->name('barang.search');
+	Route::get('/menu/cari', [MenuController::class, 'search'])->name('menu.search');
 
 
 	Route::controller(KategoriController::class)->prefix('kategori')->group(function () {
@@ -58,5 +46,8 @@ Route::middleware('auth')->group(function () {
 	});
 
 	Route::get('/kategori/cari', [KategoriController::class, 'search'])->name('kategori.search');
-
+	
+	Route::get('/profile', [App\Http\Controllers\AuthController::class, 'profile'])->name('profile');
+	Route::post('/profile/update', [AuthController::class, 'profileUpdate'])->name('profile.update');
 });
+

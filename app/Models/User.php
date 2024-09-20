@@ -20,7 +20,9 @@ class User extends Authenticatable
 		'nama',
 		'email',
 		'password',
-		'level'
+		'level',
+        'mobile',
+        'address'
     ];
 
     /**
