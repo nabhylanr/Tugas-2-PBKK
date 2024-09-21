@@ -17,20 +17,23 @@
         <i class="fas fa-fw fa-home"></i>
         <span>Dashboard </span></a>
     </li>
-  
+    
+    @if (auth()->user()->level == 'Admin')
     <li class="nav-item">
       <a class="nav-link" href="{{ route('menu') }}">
         <i class="fas fa-utensils"></i>
         <span>Menus</span></a>
     </li>
+    @endif
+
   
-      @if (auth()->user()->level == 'Admin')
+    @if (auth()->user()->level == 'Admin')
     <li class="nav-item">
       <a class="nav-link" href="{{ route('kategori') }}">
         <i class="fas fa-list-alt"></i>
         <span>Categories</span></a>
     </li>
-      @endif
+    @endif
 
     <li class="nav-item">
       <a class="nav-link" href="{{ route('order') }}">

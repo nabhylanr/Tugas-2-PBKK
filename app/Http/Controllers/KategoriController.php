@@ -9,10 +9,10 @@ class KategoriController extends Controller
 {
 	public function index()
 	{
-    	$kategori = Kategori::with('menu')->paginate(5); // Fetching kategori with related menus
-    	return view('kategori.index', compact('kategori')); // Passing 'kategori' to the view
+		$kategori = Kategori::with('menu')->paginate(5);
+	
+		return view('kategori.index', ['kategori' => $kategori]);
 	}
-
 	
 
 	public function tambah()
@@ -42,13 +42,11 @@ class KategoriController extends Controller
 	}
 
 	public function hapus($id)
-{
-    // Find the category by its ID and delete it
-    Kategori::find($id)->delete();
+	{
+    	Kategori::find($id)->delete();
 
-    // Redirect to the category list after deletion
-    return redirect()->route('kategori');
-}
+    	return redirect()->route('kategori');
+	}
 
 
 	public function search(Request $request)
