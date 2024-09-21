@@ -22,7 +22,8 @@ class User extends Authenticatable
 		'password',
 		'level',
         'mobile',
-        'address'
+        'address',
+        'id_membership',
     ];
 
     /**
@@ -43,4 +44,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function membership()
+    {
+        return $this->hasMany(Membership::class);
+    }
 }

@@ -21,6 +21,7 @@ return new class extends Migration
 			$table->string('level');
 			$table->string('mobile')->nullable();
             $table->string('address')->nullable();
+			$table->foreignId('id_membership')->nullable()->constrained('membership')->onDelete('cascade');
 			$table->timestamps();
 		});
 	}
@@ -32,6 +33,9 @@ return new class extends Migration
 	 */
 	public function down()
 	{
-		Schema::dropIfExists('users');
+		Schema::table('users', function (Blueprint $table) {
+            $table->dropForeign(['id_membership']);
+            $table->dropColumn('id_membership');
+        });
 	}
 };

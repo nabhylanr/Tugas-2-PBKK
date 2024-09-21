@@ -3,6 +3,8 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\MembershipController;
 use Illuminate\Support\Facades\Route;
 
 Route::controller(AuthController::class)->group(function () {
@@ -43,6 +45,14 @@ Route::middleware('auth')->group(function () {
 		Route::get('edit/{id}', 'edit')->name('kategori.edit');
 		Route::post('edit/{id}', 'update')->name('kategori.tambah.update');
 		Route::get('hapus/{id}', 'hapus')->name('kategori.hapus');
+	});
+
+	Route::controller(OrderController::class)->prefix('order')->group(function () {
+		Route::get('', 'index')->name('order');
+	});
+
+	Route::controller(MembershipController::class)->prefix('membership')->group(function () {
+		Route::get('', 'index')->name('membership');
 	});
 
 	Route::get('/kategori/cari', [KategoriController::class, 'search'])->name('kategori.search');

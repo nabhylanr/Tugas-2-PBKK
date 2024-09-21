@@ -9,10 +9,11 @@ class KategoriController extends Controller
 {
 	public function index()
 	{
-		$kategori = Kategori::paginate(5);
-
-		return view('kategori/index', ['kategori' => $kategori]);
+    	$kategori = Kategori::with('menu')->paginate(5); // Fetching kategori with related menus
+    	return view('kategori.index', compact('kategori')); // Passing 'kategori' to the view
 	}
+
+	
 
 	public function tambah()
 	{
