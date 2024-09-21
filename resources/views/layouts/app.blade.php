@@ -39,11 +39,11 @@
 }
 
 .category-card:hover .category-img {
-    transform: scale(1.1); /* Zoom-in effect */
+    transform: scale(1.1); 
 }
 
 .category-card:hover {
-    transform: translateY(-10px); /* Slight move up on hover */
+    transform: translateY(-10px); 
 }
 
 p {
@@ -82,7 +82,7 @@ p {
     }
 
     .owner-img:hover {
-        transform: scale(1.1); /* Zoom-in effect on hover */
+        transform: scale(1.1); 
     }
 
     .owner-description {
@@ -94,7 +94,7 @@ p {
     }
 
     .owner-description:hover {
-        transform: translateY(-10px); /* Slight move up on hover */
+        transform: translateY(-10px); 
     }
 
     .owner-description h4 {
@@ -106,15 +106,13 @@ p {
         margin-top: 10px;
     }
 
-    /* Container for the card background */
 .card-container {
-    background-color: #f8f9fa; /* Light gray background like the "white" effect */
+    background-color: #f8f9fa; 
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
-/* Review Item Styles */
 .review-item {
     border-bottom: 1px solid #e0e0e0;
     padding-bottom: 15px;
@@ -128,7 +126,7 @@ p {
 }
 
 .user-img img:hover {
-    transform: scale(1.1); /* Slightly enlarge on hover */
+    transform: scale(1.1); 
 }
 
 .stars .fa-star {
@@ -137,7 +135,7 @@ p {
 }
 
 .stars .fa-star.checked {
-    color: #f39c12; /* Star color for checked */
+    color: #f39c12; 
 }
 
 .hover-zoom {

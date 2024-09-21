@@ -68,20 +68,16 @@ class MenuController extends Controller
 	}
 
 	public function search(Request $request)
-{
-    // Get the search keyword from the request
+    {
     $keyword = $request->input('search');
 
     if ($keyword) {
-        // If a keyword is provided, search for matching items
         $menu = Menu::where('nama_menu', 'like', "%" . $keyword . "%")->paginate(5);
     } else {
-        // If no keyword is provided, return all items with pagination
         $menu = Menu::paginate(5);
     }
 
-    // Return the results to the same view
     return view('menu.index', ['data' => $menu]);
-}
+    }
 
 }

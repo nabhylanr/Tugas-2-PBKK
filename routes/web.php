@@ -53,6 +53,9 @@ Route::middleware('auth')->group(function () {
 
 	Route::controller(MembershipController::class)->prefix('membership')->group(function () {
 		Route::get('', 'index')->name('membership');
+		Route::get('tambah', 'tambah')->name('membership.tambah');
+		Route::post('tambah', 'simpan')->name('membership.tambah.simpan');
+		Route::get('hapus/{id}', 'hapus')->name('membership.hapus');
 	});
 
 	Route::get('/kategori/cari', [KategoriController::class, 'search'])->name('kategori.search');

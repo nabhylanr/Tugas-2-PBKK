@@ -28,7 +28,7 @@
     <li class="nav-item">
       <a class="nav-link" href="{{ route('kategori') }}">
         <i class="fas fa-list-alt"></i>
-        <span>Categories </span></a>
+        <span>Categories</span></a>
     </li>
       @endif
 
@@ -39,15 +39,9 @@
     </li>
 
     <li class="nav-item">
-      <a class="nav-link" href="{{ route('profile') }}">
-        <i class="fas fa-user-circle"></i>
-        <span>Profile </span></a>
-    </li>
-
-    <li class="nav-item">
       <a class="nav-link" href="{{ route('membership') }}">
         <i class="fas fa-id-card"></i>
-        <span>Membership </span></a>
+        <span>Membership</span></a>
     </li>
   
     <!-- Divider -->
