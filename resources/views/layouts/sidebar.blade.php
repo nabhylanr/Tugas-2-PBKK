@@ -49,7 +49,7 @@
 
     <li class="nav-item">
       <a class="nav-link" href="{{ route('review') }}">
-        <i class="fas fa-id-card"></i>
+        <i class="fas fa-star"></i>
         <span>Review</span></a>
     </li>
   

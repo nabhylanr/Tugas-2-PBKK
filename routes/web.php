@@ -61,6 +61,9 @@ Route::middleware('auth')->group(function () {
 
 	Route::controller(ReviewController::class)->prefix('review')->group(function () {
 		Route::get('', 'index')->name('review');
+		Route::get('tambah', 'tambah')->name('review.tambah');
+		Route::post('tambah', 'simpan')->name('review.tambah.simpan');
+		Route::get('hapus/{id}', 'hapus')->name('review.hapus');
 	});
 
 	Route::get('/kategori/cari', [KategoriController::class, 'search'])->name('kategori.search');
