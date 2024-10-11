@@ -56,8 +56,11 @@ Route::middleware('auth')->group(function () {
 
 	Route::controller(CartController::class)->prefix('cart')->group(function () {
 		Route::get('', 'index')->name('cart');
-		Route::post('/cart/add/{menuId}', 'add')->name('cart.add');
-		Route::delete('/cart/remove/{id}', 'remove')->name('cart.remove');
+		Route::post('/cart/tambah/{menuId}', 'tambah')->name('cart.tambah');
+		Route::post('/cart/tambah', 'simpan')->name('cart.simpan');
+		Route::delete('/cart/hapus/{id}', 'hapus')->name('cart.hapus');
+		Route::post('/cart/apply-discount', 'applyDiscount')->name('cart.applyDiscount');
+		Route::post('/cart/cancelDiscount', 'cancelDiscount')->name('cart.cancelDiscount');
 	});
 
 	Route::controller(MembershipController::class)->prefix('membership')->group(function () {

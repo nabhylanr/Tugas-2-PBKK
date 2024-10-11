@@ -24,8 +24,7 @@
                             <td>{{ $menu->nama_menu }}</td>
                             <td>Rp {{ number_format($menu->harga, 0, ',', '.') }}</td>
                             <td>
-                                <!-- Form untuk Add to Cart -->
-                                <form action="{{ route('cart.add', $menu->id) }}" method="POST">
+                                <form action="{{ route('cart.tambah', $menu->id) }}" method="POST">
                                     @csrf
                                     <input type="hidden" name="quantity" value="1">
                                     <button type="submit" class="btn btn-success">Add to Cart</button>

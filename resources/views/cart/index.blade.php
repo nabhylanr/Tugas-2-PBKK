@@ -20,10 +20,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @php
-                        $totalPrice = 0; 
-                        $totalItems = 0;
-                    @endphp 
+                    @php $totalPrice = 0; @endphp 
                     @forelse($cartItems as $item)
                     <tr>
                         <td>{{ $item->menu->nama_menu }}</td>
@@ -31,7 +28,7 @@
                         <td>{{ $item->quantity }}</td>
                         <td>Rp {{ number_format($item->menu->harga * $item->quantity, 0, ',', '.') }}</td>
                         <td>
-                            <form action="{{ route('cart.remove', $item->id) }}" method="POST">
+                            <form action="{{ route('cart.hapus', $item->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm">Remove</button>
@@ -39,8 +36,7 @@
                         </td>
                     </tr>
                     @php
-                        $totalPrice += $item->menu->harga * $item->quantity;
-                        $totalItems += $item->quantity; 
+                        $totalPrice += $item->menu->harga * $item->quantity; 
                     @endphp
                     @empty
                     <tr>
@@ -51,27 +47,61 @@
             </table>
         </div>
 
-        @if($cartItems->isNotEmpty())
+        <div class="form-group">
+            <label for="discount_code">Kode Diskon</label>
+            <form action="{{ route('cart.applyDiscount') }}" method="POST">
+                @csrf
+                <input type="text" class="form-control" id="discount_code" name="discount_code" placeholder="Masukkan kode diskon">
+                <button type="submit" class="btn btn-primary mt-2" style="background-color: #1F3933; color: #FFFFFF;">Apply</button>
+            </form>
+        </div>
+
         <div class="table-responsive">
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th>Total Jumlah Item</th>
+                        <th>Total</th>
+                        <th>Diskon</th>
                         <th>Total Bayar</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>{{ $totalItems }}</td>
                         <td>Rp {{ number_format($totalPrice, 0, ',', '.') }}</td>
+                        <td>{{ isset($discount) ? $discount->nilai_diskon . '' : 'Tidak ada diskon' }}</td>
+                        <td>
+                            @php
+                                $discountAmount = isset($discount) ? ($totalPrice * floatval($discount->nilai_diskon) / 100) : 0;
+                                $finalPrice = $totalPrice - $discountAmount;
+                            @endphp
+                            Rp {{ number_format($finalPrice, 0, ',', '.') }}
+                        </td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <div class="d-flex justify-content-end">
-            <a href="#" class="btn btn-primary" style="background-color: #1F3933; color: #FFFFFF;">Bayar</a>
-        </div>
+        @if (isset($discount) || $cartItems->isNotEmpty())
+            <div class="d-flex justify-content-end align-items-center mt-2">
+            @if (isset($discount))
+                <form action="{{ route('cart.cancelDiscount') }}" method="POST">
+                @csrf
+                    <button type="submit" class="btn btn-secondary mr-2">Batalkan Diskon</button>
+                </form>
+            @endif
+
+            @if($cartItems->isNotEmpty())
+                <form action="{{ route('cart.simpan') }}" method="POST" class="d-inline">
+                    @csrf
+                    <button type="submit" class="btn btn-primary" style="background-color: #1F3933; color: #FFFFFF;">Bayar</button>
+                </form>            
+            @endif
+            </div>
+        @endif
+        @if (session('success'))
+            <div class="alert alert-success">
+            {{ session('success') }}
+            </div>
         @endif
     </div>
 </div>
