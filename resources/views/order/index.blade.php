@@ -15,7 +15,7 @@
                         <tr>
                             <th>Nama Menu</th>
                             <th>Harga</th>
-                            <th>Actions</th> 
+                            <th>Aksi</th> 
                         </tr>
                     </thead>
                     <tbody>

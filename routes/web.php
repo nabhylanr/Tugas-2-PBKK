@@ -7,6 +7,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\MembershipController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\DiscountController;
 use Illuminate\Support\Facades\Route;
 
 Route::controller(AuthController::class)->group(function () {
@@ -66,6 +67,15 @@ Route::middleware('auth')->group(function () {
 		Route::get('hapus/{id}', 'hapus')->name('membership.hapus');
 	});
 
+	Route::controller(DiscountController::class)->prefix('discount')->group(function () {
+		Route::get('', 'index')->name('discount');
+		Route::get('tambah', 'tambah')->name('discount.tambah');
+		Route::post('tambah', 'simpan')->name('discount.tambah.simpan');
+		Route::get('edit/{id}', 'edit')->name('discount.edit');
+		Route::post('edit/{id}', 'update')->name('discount.tambah.update');
+		Route::get('hapus/{id}', 'hapus')->name('discount.hapus');
+	});
+
 	Route::controller(ReviewController::class)->prefix('review')->group(function () {
 		Route::get('', 'index')->name('review');
 		Route::get('tambah', 'tambah')->name('review.tambah');
@@ -74,6 +84,7 @@ Route::middleware('auth')->group(function () {
 	});
 
 	Route::get('/kategori/cari', [KategoriController::class, 'search'])->name('kategori.search');
+	Route::get('/discount/cari', [KategoriController::class, 'search'])->name('discount.search');
 	
 	Route::controller(AuthController::class)->prefix('profile')->group(function () {
 		Route::get('', 'profile')->name('profile');

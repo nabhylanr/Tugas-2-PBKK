@@ -47,6 +47,14 @@
         <span>Cart</span></a>
     </li>
 
+    @if (auth()->user()->level == 'Admin')
+    <li class="nav-item">
+      <a class="nav-link" href="{{ route('discount') }}">
+        <i class="fas fa-percent"></i>
+        <span>Discount</span></a>
+    </li>
+    @endif
+
     <li class="nav-item">
       <a class="nav-link" href="{{ route('membership') }}">
         <i class="fas fa-id-card"></i>

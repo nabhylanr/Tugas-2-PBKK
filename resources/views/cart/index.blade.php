@@ -20,7 +20,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @php $totalPrice = 0; @endphp 
+                    @php
+                        $totalPrice = 0; 
+                        $totalItems = 0;
+                    @endphp 
                     @forelse($cartItems as $item)
                     <tr>
                         <td>{{ $item->menu->nama_menu }}</td>
@@ -36,7 +39,8 @@
                         </td>
                     </tr>
                     @php
-                        $totalPrice += $item->menu->harga * $item->quantity; 
+                        $totalPrice += $item->menu->harga * $item->quantity;
+                        $totalItems += $item->quantity; 
                     @endphp
                     @empty
                     <tr>
@@ -46,10 +50,27 @@
                 </tbody>
             </table>
         </div>
-        
+
         @if($cartItems->isNotEmpty())
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Total Jumlah Item</th>
+                        <th>Total Bayar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ $totalItems }}</td>
+                        <td>Rp {{ number_format($totalPrice, 0, ',', '.') }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
         <div class="d-flex justify-content-end">
-            <a href="#" class="btn btn-primary" style="background-color: #1F3933; color: #FFFFFF;">Total Harga: <strong>Rp {{ number_format($totalPrice, 0, ',', '.') }}</strong></a>
+            <a href="#" class="btn btn-primary" style="background-color: #1F3933; color: #FFFFFF;">Bayar</a>
         </div>
         @endif
     </div>
