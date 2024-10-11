@@ -42,6 +42,12 @@
     </li>
 
     <li class="nav-item">
+      <a class="nav-link" href="{{ route('cart') }}">
+        <i class="fas fa-shopping-cart"></i>
+        <span>Cart</span></a>
+    </li>
+
+    <li class="nav-item">
       <a class="nav-link" href="{{ route('membership') }}">
         <i class="fas fa-id-card"></i>
         <span>Membership</span></a>

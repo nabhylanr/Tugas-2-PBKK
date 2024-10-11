@@ -14,7 +14,6 @@
                     </h6>
                 </div>
                 <div class="card-body">
-                    <!-- Review Rating -->
                     <div class="form-group">
                         <label for="rating">Rating (1 - 5)</label>
                         <select name="rating" id="rating" class="custom-select">
@@ -27,7 +26,6 @@
                         </select>
                     </div>
 
-                    <!-- Review Content -->
                     <div class="form-group">
                         <label for="review">Review</label>
                         <textarea class="form-control" id="review" name="review" rows="4">{{ isset($review) ? $review->review : '' }}</textarea>

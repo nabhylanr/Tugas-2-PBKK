@@ -6,6 +6,7 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\MembershipController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
 
 Route::controller(AuthController::class)->group(function () {
@@ -50,6 +51,12 @@ Route::middleware('auth')->group(function () {
 
 	Route::controller(OrderController::class)->prefix('order')->group(function () {
 		Route::get('', 'index')->name('order');
+	});
+
+	Route::controller(CartController::class)->prefix('cart')->group(function () {
+		Route::get('', 'index')->name('cart');
+		Route::post('/cart/add/{menuId}', 'add')->name('cart.add');
+		Route::delete('/cart/remove/{id}', 'remove')->name('cart.remove');
 	});
 
 	Route::controller(MembershipController::class)->prefix('membership')->group(function () {
