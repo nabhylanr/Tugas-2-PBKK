@@ -8,6 +8,7 @@ use App\Http\Controllers\MembershipController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\DiscountController;
+use App\Http\Controllers\OutletController;
 use Illuminate\Support\Facades\Route;
 
 Route::controller(AuthController::class)->group(function () {
@@ -40,7 +41,6 @@ Route::middleware('auth')->group(function () {
 	
 	Route::get('/menu/cari', [MenuController::class, 'search'])->name('menu.search');
 
-
 	Route::controller(KategoriController::class)->prefix('kategori')->group(function () {
 		Route::get('', 'index')->name('kategori');
 		Route::get('tambah', 'tambah')->name('kategori.tambah');
@@ -48,6 +48,15 @@ Route::middleware('auth')->group(function () {
 		Route::get('edit/{id}', 'edit')->name('kategori.edit');
 		Route::post('edit/{id}', 'update')->name('kategori.tambah.update');
 		Route::get('hapus/{id}', 'hapus')->name('kategori.hapus');
+	});
+
+	Route::controller(OutletController::class)->prefix('outlets')->group(function () {
+		Route::get('', 'index')->name('outlets');
+		Route::get('tambah', 'tambah')->name('outlets.tambah');
+		Route::post('tambah', 'simpan')->name('outlets.tambah.simpan');
+		Route::get('edit/{id}', 'edit')->name('outlets.edit');
+		Route::post('edit/{id}', 'update')->name('outlets.tambah.update');
+		Route::get('hapus/{id}', 'hapus')->name('outlets.hapus');
 	});
 
 	Route::controller(OrderController::class)->prefix('order')->group(function () {
@@ -87,7 +96,8 @@ Route::middleware('auth')->group(function () {
 	});
 
 	Route::get('/kategori/cari', [KategoriController::class, 'search'])->name('kategori.search');
-	Route::get('/discount/cari', [KategoriController::class, 'search'])->name('discount.search');
+	Route::get('/discount/cari', [DiscountController::class, 'search'])->name('discount.search');
+	Route::get('/outlets/cari', [OutletController::class, 'search'])->name('outlets.search');
 	
 	Route::controller(AuthController::class)->prefix('profile')->group(function () {
 		Route::get('', 'profile')->name('profile');

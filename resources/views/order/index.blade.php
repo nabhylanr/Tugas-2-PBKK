@@ -24,10 +24,10 @@
                             <td>{{ $menu->nama_menu }}</td>
                             <td>Rp {{ number_format($menu->harga, 0, ',', '.') }}</td>
                             <td>
-                                <form action="{{ route('cart.tambah', $menu->id) }}" method="POST">
+                                <form action="{{ route('cart.tambah', $menu->id) }}" method="POST" class="d-flex align-items-center">
                                     @csrf
-                                    <input type="hidden" name="quantity" value="1">
-                                    <button type="submit" class="btn btn-success">Add to Cart</button>
+                                    <input type="number" name="quantity" value="0" min="0" class="form-control mx-2" style="width: 60px; text-align: center;">
+                                    <button type="submit" class="btn btn-primary btn-sm ml-2">Add to Cart</button>
                                 </form>
                             </td>
                         </tr>

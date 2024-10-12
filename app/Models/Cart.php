@@ -13,7 +13,8 @@ class Cart extends Model
         'user_id', 
         'menu_id', 
         'quantity', 
-        'status'];
+        'status'
+    ];
 
     public function menu()
     {

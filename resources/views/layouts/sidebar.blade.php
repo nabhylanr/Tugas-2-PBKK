@@ -66,7 +66,13 @@
         <i class="fas fa-star"></i>
         <span>Review</span></a>
     </li>
-  
+
+    <li class="nav-item">
+      <a class="nav-link" href="{{ route('outlets') }}">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>Outlet</span></a>
+    </li>
+
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
   

@@ -95,8 +95,6 @@ class CartController extends Controller
             'finalPrice' => $finalPrice,
         ]);
 
-        Cart::where('user_id', Auth::id())->delete();
-
         return redirect()->back()->with('success', 'Pembayaran berhasil dilakukan. Total yang dibayarkan: Rp ' . number_format($finalPrice, 0, ',', '.'));
     }
 }
