@@ -33,7 +33,6 @@
                 @endforeach
             @else
                 <p>No reviews found.</p>
-                <a href="{{ route('review.tambah') }}" class="btn" style="background-color: #1F3933; color: #FFFFFF;">Add Review</a>
             @endif
     </div>
 </div>

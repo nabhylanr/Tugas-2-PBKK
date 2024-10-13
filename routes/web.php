@@ -9,6 +9,7 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\DiscountController;
 use App\Http\Controllers\OutletController;
+use App\Http\Controllers\PaymentController;
 use Illuminate\Support\Facades\Route;
 
 Route::controller(AuthController::class)->group(function () {
@@ -48,6 +49,15 @@ Route::middleware('auth')->group(function () {
 		Route::get('edit/{id}', 'edit')->name('kategori.edit');
 		Route::post('edit/{id}', 'update')->name('kategori.tambah.update');
 		Route::get('hapus/{id}', 'hapus')->name('kategori.hapus');
+	});
+
+	Route::controller(PaymentController::class)->prefix('payment')->group(function () {
+		Route::get('', 'index')->name('payment');
+		Route::get('tambah', 'tambah')->name('payment.tambah');
+		Route::post('tambah', 'simpan')->name('payment.tambah.simpan');
+		Route::get('edit/{id}', 'edit')->name('payment.edit');
+		Route::post('edit/{id}', 'update')->name('payment.tambah.update');
+		Route::get('hapus/{id}', 'hapus')->name('payment.hapus');
 	});
 
 	Route::controller(OutletController::class)->prefix('outlets')->group(function () {
@@ -98,6 +108,7 @@ Route::middleware('auth')->group(function () {
 	Route::get('/kategori/cari', [KategoriController::class, 'search'])->name('kategori.search');
 	Route::get('/discount/cari', [DiscountController::class, 'search'])->name('discount.search');
 	Route::get('/outlets/cari', [OutletController::class, 'search'])->name('outlets.search');
+	Route::get('/payment/cari', [PaymentController::class, 'search'])->name('payment.search');
 	
 	Route::controller(AuthController::class)->prefix('profile')->group(function () {
 		Route::get('', 'profile')->name('profile');

@@ -81,6 +81,16 @@
             </table>
         </div>
 
+        <div class="form-group">
+            <label for="id_payment">Metode Pembayaran</label>
+            <select name="id_payment" id="id_payment" class="custom-select">
+                <option value="" selected disabled hidden>-- Pilih Metode --</option>
+                @foreach ($payment as $row)
+                    <option value="{{ $row->id }}" {{ isset($cart) ? ($cart->id_payment == $row->id ? 'selected' : '') : '' }}>{{ $row->method }}</option>
+                @endforeach 
+            </select>
+        </div>
+
         @if (isset($discount) || $cartItems->isNotEmpty())
             <div class="d-flex justify-content-end align-items-center mt-2">
             @if (isset($discount))
@@ -97,6 +107,7 @@
                 </form>            
             @endif
             </div>
+            
         @endif
         @if (session('success'))
             <div class="alert alert-success">

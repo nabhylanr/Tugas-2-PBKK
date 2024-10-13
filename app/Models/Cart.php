@@ -20,4 +20,9 @@ class Cart extends Model
     {
         return $this->belongsTo(Menu::class);
     }
+
+    public function payment()
+	{
+		return $this->belongsTo(Payment::class, 'id_payment');
+	}
 }

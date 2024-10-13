@@ -55,6 +55,14 @@
     </li>
     @endif
 
+    @if (auth()->user()->level == 'Admin')
+    <li class="nav-item">
+      <a class="nav-link" href="{{ route('payment') }}">
+        <i class="fas fa-wallet"></i>
+        <span>Payment</span></a>
+    </li>
+    @endif
+
     <li class="nav-item">
       <a class="nav-link" href="{{ route('membership') }}">
         <i class="fas fa-id-card"></i>
@@ -67,12 +75,14 @@
         <span>Review</span></a>
     </li>
 
+    @if (auth()->user()->level == 'Admin')
     <li class="nav-item">
       <a class="nav-link" href="{{ route('outlets') }}">
         <i class="fas fa-map-marker-alt"></i>
         <span>Outlet</span></a>
     </li>
-
+    @endif
+    
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
   
